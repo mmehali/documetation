@@ -1,20 +1,19 @@
 #Getting started with Spring 4 MVC REST Controller
---------------------------------------------------------------
+
 ###### 1. Create a new Maven Project
---------------------------------------------------------------
-mvn archetype:create -DgroupId=net.viralpatel.spring -DartifactId=SpringRest -DarchetypeArtifactId=maven-archetype-webapp
+
+```mvn archetype:create -DgroupId=net.viralpatel.spring -DartifactId=SpringRest -DarchetypeArtifactId=maven-archetype-webapp```
 
 run following command and convert the project in Eclipse project.
 
-mvn eclipse:eclipse
+```mvn eclipse:eclipse```
 
 import the project in Eclipse.
 
---------------------------------------------------------
 ###### 2. Add Spring 4 MVC Maven dependencies (Update pom.xml)
----------------------------------------------------------
-add first the maven dependencies for Spring 4 MVC REST in our pom.xml file.
 
+add first the maven dependencies for Spring 4 MVC REST in our pom.xml file.
+```
 	<properties>
 		<java-version>1.7</java-version>
 		<springframework.version>4.3.1.RELEASE</springframework.version>
@@ -37,14 +36,15 @@ add first the maven dependencies for Spring 4 MVC REST in our pom.xml file.
 		<version>3.0.1</version>
 		<scope>provided</scope>
 	</dependency>
+```
 
---------------------------------------------------------
 ###### 3. Set Annotation based Configuration for Spring 4 MVC REST
---------------------------------------------------------
+
 These will bootstrap the spring mvc application and set package to scan controllers and resources
 Create RestMVCConfig.java 
 @EnableWebMvc, @ComponentScan and @Configuration annotations. 
 
+```
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -54,15 +54,15 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ComponentScan(basePackages = "net.viralpatel.spring")
 public class RestMVCConfig {
 }
+```
 
----------------------------------------------------------
 ###### 4. Set Servlet 3 Java Configuration
----------------------------------------------------------
 Create AppInitializer class under config package. This class will replace web.xml and 
 it will map the spring’s dispatcher servlet and bootstrap it.
 
 /src/main/java/net/viralpatel/spring/config/AppInitializer.java
 
+```
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -82,13 +82,13 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 		return new String[] { "/" };
 	}
 }
+```
 
 We have configured the dispatcher servlet using standard Java based configuration instead of the older web.xml. 
 Thus web.xml is no longer required and we can simply delete it.
 
----------------------------------------------------------
 ###### 5. Creation du modèle
----------------------------------------------------------
+```
 public class Customer {
 	private Long id;
 	private String firstName;
@@ -111,9 +111,9 @@ public class Customer {
 
 	//..Getter and setter methods
 }
----------------------------------------------------------
+```
+
 ###### 6. Create the Dummy Customer Data Access Object (DAO)
----------------------------------------------------------
 Instead of storing the customer data in database and to make this example 
 simple, we will create a dummy data access object that will store customer 
 details in a list. This DAO class can be easily replaced with Spring Data 
@@ -122,6 +122,7 @@ DAO or custom DAO. But for this example we will keep it easy.
 The CustomerDAO contains methods list(), get(), create(), update() and delete() 
 to perform CRUD operation on customers.
 
+```
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Component;
@@ -181,9 +182,9 @@ public class CustomerDAO {
 	}
 
 }
--------------------------------------------------------------
+```
+
 ###### 7. Create the Customer REST Controller
--------------------------------------------------------------
 Now let us create CustomerRestController class. This class is annotated with 
 @RestController annotation. Also note that we are using new annotations 
 @GetMapping, @PostMapping, @PutMapping and @DeleteMapping instead of 
@@ -192,6 +193,7 @@ Spring MVC 4.3 and are standard way of defining REST endpoints. They act as
 wrapper to @RequestMapping. For example @GetMapping is a composed annotation 
 that acts as a shortcut for @RequestMapping(method = RequestMethod.GET).
 
+```
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -249,7 +251,7 @@ public class CustomerRestController {
 	}
 
 }
-
+```
 
 
 
