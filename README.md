@@ -14,7 +14,7 @@ import the project in Eclipse.
 ###### 2. **Add Spring 4 MVC Maven dependencies (Update pom.xml)**
 
 add first the maven dependencies for Spring 4 MVC REST in our pom.xml file.
-```
+```maven
 	<properties>
 	    <java-version>1.7</java-version>
 	    <springframework.version>4.3.1.RELEASE</springframework.version>
