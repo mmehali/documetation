@@ -1,5 +1,5 @@
 
-#Getting started with Spring 4 MVC REST Controller
+# ** Getting started with Spring 4 MVC REST Controller **
 
 ###### 1. Create a new Maven Project
 
@@ -11,35 +11,34 @@ run following command and convert the project in Eclipse project.
 
 import the project in Eclipse.
 
-###### 2. Add Spring 4 MVC Maven dependencies (Update pom.xml)
+###### 2. ** Add Spring 4 MVC Maven dependencies (Update pom.xml) **
 
 add first the maven dependencies for Spring 4 MVC REST in our pom.xml file.
 ```
 	<properties>
-		<java-version>1.7</java-version>
-		<springframework.version>4.3.1.RELEASE</springframework.version>
-		<jackson.version>2.7.5</jackson.version>
+	    <java-version>1.7</java-version>
+	    <springframework.version>4.3.1.RELEASE</springframework.version>
+	    <jackson.version>2.7.5</jackson.version>
 	</properties>
-
 	<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${springframework.version}</version>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>${springframework.version}</version>
 	</dependency>
 	<dependency>
-		<groupId>com.fasterxml.jackson.core</groupId>
-		<artifactId>jackson-databind</artifactId>
-		<version>${jackson.version}</version>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>${jackson.version}</version>
 	</dependency>
 	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>javax.servlet-api</artifactId>
-		<version>3.0.1</version>
-		<scope>provided</scope>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.0.1</version>
+	    <scope>provided</scope>
 	</dependency>
 ```
 
-###### 3. Set Annotation based Configuration for Spring 4 MVC REST
+###### 3. ** Set Annotation based Configuration for Spring 4 MVC REST **
 
 These will bootstrap the spring mvc application and set package to scan controllers and resources
 Create RestMVCConfig.java 
