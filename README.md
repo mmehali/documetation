@@ -1,5 +1,5 @@
 
-# ** Getting started with Spring 4 MVC REST Controller **
+#** Getting started with Spring 4 MVC REST Controller **
 
 ###### 1. Create a new Maven Project
 
@@ -11,7 +11,7 @@ run following command and convert the project in Eclipse project.
 
 import the project in Eclipse.
 
-###### 2. ** Add Spring 4 MVC Maven dependencies (Update pom.xml) **
+###### 2. **Add Spring 4 MVC Maven dependencies (Update pom.xml)**
 
 add first the maven dependencies for Spring 4 MVC REST in our pom.xml file.
 ```
