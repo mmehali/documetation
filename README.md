@@ -62,7 +62,7 @@ it will map the spring’s dispatcher servlet and bootstrap it.
 
 /src/main/java/net/viralpatel/spring/config/AppInitializer.java
 
-```
+```java
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -88,7 +88,7 @@ We have configured the dispatcher servlet using standard Java based configuratio
 Thus web.xml is no longer required and we can simply delete it.
 
 ###### 5. Creation du modèle
-```
+```java
 public class Customer {
 	private Long id;
 	private String firstName;
@@ -122,7 +122,7 @@ DAO or custom DAO. But for this example we will keep it easy.
 The CustomerDAO contains methods list(), get(), create(), update() and delete() 
 to perform CRUD operation on customers.
 
-```
+```java
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Component;
@@ -193,7 +193,7 @@ Spring MVC 4.3 and are standard way of defining REST endpoints. They act as
 wrapper to @RequestMapping. For example @GetMapping is a composed annotation 
 that acts as a shortcut for @RequestMapping(method = RequestMethod.GET).
 
-```
+```java
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
