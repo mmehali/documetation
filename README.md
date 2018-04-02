@@ -237,7 +237,7 @@ public class CustomerRestController {
 	return new ResponseEntity(id, HttpStatus.OK);
 	}
 
-	@PutMapping("/customers/{id}")
+	@PutMapping("/customers/{id}") 
 	public ResponseEntity updateCustomer(@PathVariable Long id, @RequestBody Customer customer) {
 		customer = customerDAO.update(id, customer);
 		if (null == customer) {
