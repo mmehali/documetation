@@ -1,15 +1,17 @@
-# documetation
-  Getting started with Spring 4 MVC REST Controller
+#Getting started with Spring 4 MVC REST Controller
 --------------------------------------------------------------
-1. Create a new Maven Project
+###### 1. Create a new Maven Project
 --------------------------------------------------------------
-  mvn archetype:create -DgroupId=net.viralpatel.spring -DartifactId=SpringRest -DarchetypeArtifactId=maven-archetype-webapp
+mvn archetype:create -DgroupId=net.viralpatel.spring -DartifactId=SpringRest -DarchetypeArtifactId=maven-archetype-webapp
+
 run following command and convert the project in Eclipse project.
-  mvn eclipse:eclipse
+
+mvn eclipse:eclipse
+
 import the project in Eclipse.
 
 --------------------------------------------------------
-2. Add Spring 4 MVC Maven dependencies (Update pom.xml)
+###### 2. Add Spring 4 MVC Maven dependencies (Update pom.xml)
 ---------------------------------------------------------
 add first the maven dependencies for Spring 4 MVC REST in our pom.xml file.
 
@@ -37,7 +39,7 @@ add first the maven dependencies for Spring 4 MVC REST in our pom.xml file.
 	</dependency>
 
 --------------------------------------------------------
-3. Set Annotation based Configuration for Spring 4 MVC REST
+###### 3. Set Annotation based Configuration for Spring 4 MVC REST
 --------------------------------------------------------
 These will bootstrap the spring mvc application and set package to scan controllers and resources
 Create RestMVCConfig.java 
@@ -54,7 +56,7 @@ public class RestMVCConfig {
 }
 
 ---------------------------------------------------------
-4. Set Servlet 3 Java Configuration
+###### 4. Set Servlet 3 Java Configuration
 ---------------------------------------------------------
 Create AppInitializer class under config package. This class will replace web.xml and 
 it will map the spring’s dispatcher servlet and bootstrap it.
@@ -85,7 +87,7 @@ We have configured the dispatcher servlet using standard Java based configuratio
 Thus web.xml is no longer required and we can simply delete it.
 
 ---------------------------------------------------------
-5. Creation du modèle
+###### 5. Creation du modèle
 ---------------------------------------------------------
 public class Customer {
 	private Long id;
@@ -110,7 +112,7 @@ public class Customer {
 	//..Getter and setter methods
 }
 ---------------------------------------------------------
-6. Create the Dummy Customer Data Access Object (DAO)
+###### 6. Create the Dummy Customer Data Access Object (DAO)
 ---------------------------------------------------------
 Instead of storing the customer data in database and to make this example 
 simple, we will create a dummy data access object that will store customer 
@@ -180,7 +182,7 @@ public class CustomerDAO {
 
 }
 -------------------------------------------------------------
-7. Create the Customer REST Controller
+###### 7. Create the Customer REST Controller
 -------------------------------------------------------------
 Now let us create CustomerRestController class. This class is annotated with 
 @RestController annotation. Also note that we are using new annotations 
