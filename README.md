@@ -14,7 +14,7 @@ import the project in Eclipse.
 ###### 2. **Add Spring 4 MVC Maven dependencies (Update pom.xml)**
 
 add first the maven dependencies for Spring 4 MVC REST in our pom.xml file.
-```maven
+```pom
 	<properties>
 	    <java-version>1.7</java-version>
 	    <springframework.version>4.3.1.RELEASE</springframework.version>
@@ -44,7 +44,7 @@ These will bootstrap the spring mvc application and set package to scan controll
 Create RestMVCConfig.java 
 @EnableWebMvc, @ComponentScan and @Configuration annotations. 
 
-```
+```java
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
